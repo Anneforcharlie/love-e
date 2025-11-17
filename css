@@ -1,0 +1,117 @@
+/* 全局样式重置：消除默认边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", sans-serif;
+}
+
+/* 页面背景：#b1c0e0 */
+body {
+    background-color: #fef0f3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 主容器：控制页面居中，加白色背景和圆角 */
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 140, 160, 0.2);
+}
+
+/* 小猫图片样式：控制大小，加轻微动画 */
+.cat-img {
+    width: 200px; /* 可自定义小猫大小，比如250px */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    /* 小猫轻微晃动动画 */
+    animation: catShake 3s ease-in-out infinite;
+}
+
+/* 小猫晃动动画关键帧 */
+@keyframes catShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+/* 告白文字样式：控制字体大小和颜色 */
+.confession-text {
+    font-size: 24px; /* 可自定义文字大小，比如26px */
+    color: #e63946; /* 可自定义文字颜色，比如#d62828 */
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* 按钮组：控制两个按钮的间距 */
+.btn-group {
+    display: flex;
+    gap: 20px; /* 按钮之间的距离，可调整 */
+    justify-content: center;
+}
+
+/* 按钮基础样式 */
+.confess-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* “不要”按钮样式：淡灰色系 */
+.reject-btn {
+    background-color: #e5e5e5;
+    color: #333;
+}
+.reject-btn:hover {
+    background-color: #d4d4d4;
+    transform: scale(1.05); /*  hover时轻微放大 */
+}
+
+/* “可以”按钮样式：粉色系（与告白文字呼应） */
+.accept-btn {
+    background-color: #e63946;
+    color: #fff;
+}
+.accept-btn:hover {
+    background-color: #c1121f;
+    transform: scale(1.05); /*  hover时轻微放大 */
+}
+
+/* 成功告白弹窗样式（点击“可以”后显示） */
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* 默认隐藏，JS控制显示 */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.success-content {
+    background-color: #fff;
+    padding: 50px 80px;
+    border-radius: 20px;
+    text-align: center;
+}
+.success-text {
+    font-size: 28px;
+    color: #e63946;
+    margin-bottom: 20px;
+}
+.success-img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
